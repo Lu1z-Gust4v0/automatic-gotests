@@ -7,7 +7,6 @@ from typing import Optional
 TIMEOUT_IN_SECONDS = 30
 MAGALU_WEBSITE_URL = "https://www.magazineluiza.com.br/"
 
-
 def init_web_driver(arguments: list[str]):
     webdriver_options = webdriver.ChromeOptions()
 
@@ -16,6 +15,8 @@ def init_web_driver(arguments: list[str]):
 
     browser = webdriver.Chrome(options=webdriver_options)
     waiter = WebDriverWait(browser, TIMEOUT_IN_SECONDS)
+    
+    print("Browsed initialized successfully")
 
     return browser, waiter
 

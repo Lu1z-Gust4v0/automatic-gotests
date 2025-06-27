@@ -12,11 +12,11 @@ FIRST_PRODUCT_SELECTOR = "ul li a[data-testid='product-card-container']"
 PRODUCT_ATTRIBUTE_XPATH = "//label[@data-testid='attribute-item' and contains(text(), '220V')]"
 PURCHASE_PRODUCT_BUTTON_SELECTOR = "button[data-testid='buyButton']"
 
+DEFAULT_ERROR_MESSAGE = "An error happened"
+
 def should_make_a_successful_item_search_when_clicking_search_button():
     try: 
         browser, waiter = init_web_driver(['--start-maximized'])  
-    
-        print("Browsed initialized successfully")
         
         handle_page_access(browser, waiter)
         
@@ -40,15 +40,13 @@ def should_make_a_successful_item_search_when_clicking_search_button():
         browser.close()
         
     except Exception as e: 
-        test_case_failure("should_make_a_successful_item_search_when_clicking_search_button", "An Error happened", e)
+        test_case_failure("should_make_a_successful_item_search_when_clicking_search_button", DEFAULT_ERROR_MESSAGE, e)
         browser.close()
     
     
 def should_make_a_successful_item_search_when_pressing_enter():
     try: 
         browser, waiter = init_web_driver(['--start-maximized'])  
-    
-        print("Browsed initialized successfully")
         
         handle_page_access(browser, waiter)
         
@@ -71,15 +69,13 @@ def should_make_a_successful_item_search_when_pressing_enter():
         browser.close()
         
     except Exception as e: 
-        test_case_failure("should_make_a_successful_item_search_when_pressing_enter", "An Error happened", e)
+        test_case_failure("should_make_a_successful_item_search_when_pressing_enter", DEFAULT_ERROR_MESSAGE, e)
         browser.close()
         
 
 def should_successfully_apply_a_filter_in_item_search():
     try: 
         browser, waiter = init_web_driver(['--start-maximized'])  
-    
-        print("Browsed initialized successfully")
         
         handle_page_access(browser, waiter)
         
@@ -111,15 +107,13 @@ def should_successfully_apply_a_filter_in_item_search():
         browser.close()
         
     except Exception as e: 
-        test_case_failure("should_successfully_apply_a_filter_in_item_search", "An Error happened", e)
+        test_case_failure("should_successfully_apply_a_filter_in_item_search", DEFAULT_ERROR_MESSAGE, e)
         browser.close()
         
         
 def should_successfully_click_purchase_button_in_item_card():
     try: 
         browser, waiter = init_web_driver(['--start-maximized'])  
-    
-        print("Browsed initialized successfully")
         
         handle_page_access(browser, waiter)
         
@@ -176,7 +170,7 @@ def should_successfully_click_purchase_button_in_item_card():
         browser.close()
         
     except Exception as e: 
-        test_case_failure("should_successfully_click_purchase_button_in_item_card", "An Error happened", e)
+        test_case_failure("should_successfully_click_purchase_button_in_item_card", DEFAULT_ERROR_MESSAGE, e)
         browser.close()
     
     

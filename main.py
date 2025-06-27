@@ -92,7 +92,7 @@ def should_successfully_apply_a_filter_in_item_search():
         search_input.send_keys(Keys.ENTER)
         
         waiter.until(
-            expected_conditions.visibility_of_all_elements_located(
+            expected_conditions.visibility_of_element_located(
                 (By.XPATH, ITEM_SEARCH_FILTER_XPATH)
             )
         )
@@ -130,7 +130,7 @@ def should_successfully_click_purchase_button_in_item_card():
         search_input.send_keys(Keys.ENTER)
         
         waiter.until(
-            expected_conditions.visibility_of_all_elements_located(
+            expected_conditions.visibility_of_element_located(
                 (By.XPATH, ITEM_SEARCH_FILTER_XPATH)
             )
         )
@@ -139,7 +139,7 @@ def should_successfully_click_purchase_button_in_item_card():
         item_search_filter.click()
         
         waiter.until(
-            expected_conditions.visibility_of_all_elements_located(
+            expected_conditions.visibility_of_element_located(
                 (By.CSS_SELECTOR, FIRST_PRODUCT_SELECTOR)
             )
         )
@@ -154,11 +154,7 @@ def should_successfully_click_purchase_button_in_item_card():
         if product_attribute:
             product_attribute.click()
         
-        waiter.until(
-            expected_conditions.visibility_of_all_elements_located(
-                (By.CSS_SELECTOR, PURCHASE_PRODUCT_BUTTON_SELECTOR)
-            )
-        )
+        time.sleep(5)
         
         purchase_button = browser.find_element(By.CSS_SELECTOR, PURCHASE_PRODUCT_BUTTON_SELECTOR)
         purchase_button.click()
